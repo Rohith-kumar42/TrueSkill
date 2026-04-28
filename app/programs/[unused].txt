@@ -1,0 +1,1 @@
+This placeholder keeps static route folders explicit in editors. It is not used by Next.js.
