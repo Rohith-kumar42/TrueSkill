@@ -3,7 +3,7 @@ import { ChessPiece } from "@/components/chess/ChessPiece";
 import { PageTransition } from "@/components/PageTransition";
 import { GlowCard } from "@/components/ui/GlowCard";
 
-const sections = [
+const sections: [string, string[]][] = [
   ["Qualifications", ["Strong chess fundamentals and coaching experience", "Comfort teaching children and teens", "Tournament exposure preferred"]],
   ["Skills", ["Clear communication", "Patient correction", "Ability to convert games into practical lessons"]],
   ["Responsibilities", ["Lead live sessions", "Review student games", "Share progress notes with families"]],
@@ -38,7 +38,7 @@ export default function CareersPage() {
             <GlowCard key={title} className={title === "Why Join Us" ? "border-gold/55 shadow-gold" : ""}>
               <h2 className="font-display text-3xl font-bold">{title}</h2>
               <ul className="mt-5 grid gap-3 text-ivory/72">
-                {(items as string[]).map((item) => (
+                {items.map((item) => (
                   <li key={item} className="flex gap-3">
                     <ChessPiece piece="pawn" className="mt-1 h-4 w-4 shrink-0 text-gold" />
                     <span>{item}</span>
