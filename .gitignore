@@ -1,10 +1,57 @@
-.next
+# dependencies
 node_modules
-out
-dist
-.env
-.env.local
-.vercel
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# AI & Editor Agents
+.agents/
+.windsurf/
+.codeium/
+.cursorrules
+*plan.md
+*Master_Plan.md
+todo.md
+scratch.md
+seo-audit-report.md
+.gitignore

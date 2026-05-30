@@ -5,7 +5,7 @@ import { pageMotion } from "@/lib/animations";
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   return (
-    <motion.main initial={pageMotion.initial} animate={pageMotion.animate} exit={pageMotion.exit}>
+    <motion.main initial={pageMotion.initial} animate={pageMotion.animate} exit={pageMotion.exit} className="relative">
       {children}
     </motion.main>
   );

@@ -2,12 +2,34 @@ import Link from "next/link";
 import { Check, CalendarDays } from "lucide-react";
 import { ChessPiece } from "@/components/chess/ChessPiece";
 import { PawnToQueenButton } from "@/components/chess/PawnToQueenButton";
+import Breadcrumb from "@/components/Breadcrumb";
+import CourseSchema from "@/components/seo/CourseSchema";
+import FAQSchema from "@/components/seo/FAQSchema";
 import type { Program } from "@/lib/data";
+import { programFAQs } from "@/lib/data";
 
 export function LevelPageLayout({ program }: { program: Program }) {
+  const faqs = programFAQs[program.slug] || [];
+
   return (
     <>
-      <section className="pt-32">
+      <CourseSchema
+        name={`${program.name} Chess Program`}
+        description={program.intro}
+        url={`https://atrueskill.academy/programs/${program.slug}`}
+        level={program.name}
+        price={program.price}
+        schedule={program.schedule}
+      />
+      {faqs.length > 0 && <FAQSchema faqs={faqs} />}
+      <Breadcrumb
+        crumbs={[
+          { label: "Home", href: "/" },
+          { label: "Programs", href: "/programs" },
+          { label: program.name, href: `/programs/${program.slug}` },
+        ]}
+      />
+      <section className="pt-8">
         <div className="section-shell grid min-h-[54vh] items-center gap-10 py-16 lg:grid-cols-[1fr_0.7fr]">
           <div>
             <Link href="/programs" className="font-cinzel text-sm uppercase tracking-[0.18em] text-gold">
@@ -22,7 +44,7 @@ export function LevelPageLayout({ program }: { program: Program }) {
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="pb-12">
         <div className="section-shell grid gap-6 lg:grid-cols-[1fr_1fr_0.8fr]">
           <InfoBlock title="Key Objectives" items={program.objectives} />
           <InfoBlock title="Curriculum Highlights" items={program.curriculum} />
@@ -42,6 +64,24 @@ export function LevelPageLayout({ program }: { program: Program }) {
           <InfoBlock title="What's Included" items={program.included} />
         </div>
       </section>
+
+      {faqs.length > 0 && (
+        <section className="pb-24">
+          <div className="section-shell">
+            <h2 className="font-display text-3xl font-bold">Frequently Asked Questions</h2>
+            <div className="mt-6 grid gap-4">
+              {faqs.map((faq) => (
+                <div key={faq.question} className="glass-surface rounded-lg p-6">
+                  <h3 className="font-cinzel text-sm uppercase tracking-[0.12em] text-gold">
+                    {faq.question}
+                  </h3>
+                  <p className="mt-3 leading-7 text-ivory/72">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

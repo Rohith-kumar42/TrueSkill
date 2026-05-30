@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import { PageTransition } from "@/components/PageTransition";
 import { LevelPageLayout } from "@/components/sections/LevelPageLayout";
 import { programs } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Advanced Chess Program — Elite Tournament Preparation",
+  description:
+    "Elite preparation for serious competitors and title-track students. Deep analysis, repertoire sophistication, opponent-specific preparation, and one-to-one coaching.",
+  alternates: {
+    canonical: "https://atrueskill.academy/programs/advanced",
+  },
+  openGraph: {
+    title: "Advanced Chess Program | TrueSkill Academy",
+    description: "High-touch coaching for players seeking competitive edge — model game analysis, dynamic imbalance training, and tournament calendar planning.",
+    url: "https://atrueskill.academy/programs/advanced",
+  },
+};
 
 export default function AdvancedPage() {
   return (

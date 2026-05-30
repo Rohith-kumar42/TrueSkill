@@ -100,3 +100,74 @@ export const highlights = [
   { icon: Route, label: "Clear level progression" },
   { icon: Sparkles, label: "Playful, rigorous practice" }
 ];
+
+export const programFAQs: Record<string, Array<{ question: string; answer: string }>> = {
+  beginner: [
+    {
+      question: "What age is the beginner chess program for?",
+      answer:
+        "The beginner program is designed for new players aged 5 and above. No prior chess knowledge is required — students learn every piece, legal move, and basic checkmate pattern from scratch.",
+    },
+    {
+      question: "How many sessions per week does the beginner program include?",
+      answer:
+        "The beginner program includes 2 live coaching sessions per week, each lasting 45 minutes. Students also receive practice positions and parent progress notes between sessions.",
+    },
+    {
+      question: "What does the beginner chess program cost?",
+      answer:
+        "The beginner program starts from INR 2,999 per month. This includes weekly live sessions, practice positions, parent progress notes, and friendly academy games.",
+    },
+  ],
+  "post-beginner": [
+    {
+      question: "What is the post-beginner chess level?",
+      answer:
+        "The post-beginner level bridges the gap between knowing chess rules and reading positions. Students learn tactical patterns like forks, pins, and skewers, plus opening traps and elementary endgames.",
+    },
+    {
+      question: "How does post-beginner differ from beginner?",
+      answer:
+        "While beginners focus on piece movement and basic checkmates, post-beginners develop tactical awareness, study principled openings, and begin creating plans based on pawn structure. Monthly practice tournaments are included.",
+    },
+    {
+      question: "What does the post-beginner program cost?",
+      answer:
+        "The post-beginner program starts from INR 3,999 per month with 2 sessions per week (60 minutes each). It includes a tactics training track, monthly tournaments, game review notes, and a rating readiness checklist.",
+    },
+  ],
+  intermediate: [
+    {
+      question: "What skills does the intermediate chess program develop?",
+      answer:
+        "The intermediate program focuses on accurate calculation of candidate moves, improved middlegame planning, and converting technical endgames. Students work with calculation trees, minor piece strategy, and rook endings.",
+    },
+    {
+      question: "How many sessions are in the intermediate program?",
+      answer:
+        "Intermediate students attend 3 live coaching sessions per week, each lasting 60 minutes. The program includes a personal game database, opening repertoire map, and biweekly progress reviews.",
+    },
+    {
+      question: "What is the intermediate chess program pricing?",
+      answer:
+        "The intermediate program starts from INR 5,499 per month. This premium tier includes tournament preparation, a personal game database, opening repertoire maps, and biweekly performance reviews.",
+    },
+  ],
+  advanced: [
+    {
+      question: "What is TrueSkill's advanced chess program?",
+      answer:
+        "The advanced program is elite preparation for serious competitors and title-track students. It covers deep positional analysis, repertoire sophistication, dynamic imbalance training, and opponent-specific preparation.",
+    },
+    {
+      question: "Who is the advanced program designed for?",
+      answer:
+        "The advanced program is for experienced players seeking competitive edge in rated tournaments. Students receive one-to-one analysis, custom opening files, tournament calendar planning, and performance review calls.",
+    },
+    {
+      question: "How is advanced program pricing structured?",
+      answer:
+        "The advanced program uses custom pricing based on the student's goals, session frequency, and tournament calendar. Contact us for a personalized coaching plan and pricing discussion.",
+    },
+  ],
+};

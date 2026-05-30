@@ -1,13 +1,30 @@
+import type { Metadata } from "next";
 import { BrainCircuit } from "lucide-react";
 import { ChessPiece } from "@/components/chess/ChessPiece";
+import Breadcrumb from "@/components/Breadcrumb";
 import { PageTransition } from "@/components/PageTransition";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { benefits } from "@/lib/data";
 
+export const metadata: Metadata = {
+  title: "Advantages of Chess — Cognitive, Emotional & Social Benefits",
+  description:
+    "Chess strengthens the whole student. Discover how chess improves pattern recognition, emotional resilience, structured thinking, and social skills in children and adults.",
+  alternates: {
+    canonical: "https://atrueskill.academy/advantages",
+  },
+  openGraph: {
+    title: "Advantages of Chess | TrueSkill Academy",
+    description: "How chess improves cognitive ability, emotional resilience, educational performance, and social skills.",
+    url: "https://atrueskill.academy/advantages",
+  },
+};
+
 export default function AdvantagesPage() {
   return (
     <PageTransition>
-      <section className="pt-32">
+      <Breadcrumb crumbs={[{ label: "Home", href: "/" }, { label: "Advantages", href: "/advantages" }]} />
+      <section className="pt-8">
         <div className="section-shell py-16 text-center">
           <p className="font-cinzel text-sm uppercase tracking-[0.18em] text-gold">Advantages of Chess</p>
           <h1 className="mx-auto mt-4 max-w-4xl font-display text-[clamp(3rem,8vw,6.2rem)] font-black leading-none text-balance">

@@ -1,0 +1,26 @@
+# TrueSkill Academy
+
+> Expert chess coaching for ambitious young minds. Structured programs from beginner to advanced with live sessions, tactical training, and tournament preparation.
+
+## Programs
+
+- `Beginner Chess Program -> https://atrueskill.academy/programs/beginner`: Foundation program for new players — board setup, notation, opening principles, and basic checkmates. 2 sessions/week, 45 minutes. From INR 2,999.
+- `Post-Beginner Chess Program -> https://atrueskill.academy/programs/post-beginner`: Bridge from rules to strategy — forks, pins, skewers, opening traps, and elementary endgames. 2 sessions/week, 60 minutes. From INR 3,999.
+- `Intermediate Chess Coaching -> https://atrueskill.academy/programs/intermediate`: Sharper calculation, positional play, and tournament habits — calculation trees, minor piece strategy, rook endings. 3 sessions/week, 60 minutes. From INR 5,499.
+- `Advanced Chess Program -> https://atrueskill.academy/programs/advanced`: Elite tournament preparation — deep analysis, repertoire sophistication, opponent-specific prep, one-to-one coaching. Custom pricing.
+
+## Key Pages
+
+- `All Programs -> https://atrueskill.academy/programs`: Overview of all four coaching levels with pricing and schedules.
+- `Advantages of Chess -> https://atrueskill.academy/advantages`: Cognitive, emotional, educational, and social benefits of chess for students.
+- `Careers -> https://atrueskill.academy/careers`: Chess coaching positions — qualifications, responsibilities, and application.
+- `Contact -> https://atrueskill.academy/contact`: Enquiry form, email (hello@atrueskill.academy), and phone contact.
+
+## Key Facts
+
+- Four structured levels: Beginner, Post-Beginner, Intermediate, Advanced
+- Live coaching sessions with expert instructors
+- Programs designed for children and adults
+- Pricing starts from INR 2,999/month
+- Based in Coimbatore, Tamil Nadu, India
+- Online and in-person coaching available

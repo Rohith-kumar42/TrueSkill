@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 import { PageTransition } from "@/components/PageTransition";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { GlowCard } from "@/components/ui/GlowCard";
+
+export const metadata: Metadata = {
+  title: "Contact TrueSkill Academy — Start Your Chess Journey",
+  description:
+    "Get in touch with TrueSkill Academy. Discuss the right chess coaching path for your child or yourself. Email, phone, or fill out our contact form.",
+  alternates: {
+    canonical: "https://atrueskill.academy/contact",
+  },
+  openGraph: {
+    title: "Contact TrueSkill Academy",
+    description: "Begin a conversation about the right chess path. Reach us by email, phone, or our contact form.",
+    url: "https://atrueskill.academy/contact",
+  },
+};
 
 const details = [
   { icon: Mail, label: "Email", value: "hello@atrueskill.academy" },
@@ -12,7 +28,8 @@ const details = [
 export default function ContactPage() {
   return (
     <PageTransition>
-      <section className="pt-32">
+      <Breadcrumb crumbs={[{ label: "Home", href: "/" }, { label: "Contact", href: "/contact" }]} />
+      <section className="pt-8">
         <div className="section-shell py-16">
           <p className="font-cinzel text-sm uppercase tracking-[0.18em] text-gold">Contact</p>
           <h1 className="mt-4 max-w-4xl font-display text-[clamp(3rem,8vw,6.2rem)] font-black leading-none text-balance">

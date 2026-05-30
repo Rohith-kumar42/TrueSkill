@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import { Mail } from "lucide-react";
 import { ChessPiece } from "@/components/chess/ChessPiece";
+import Breadcrumb from "@/components/Breadcrumb";
 import { PageTransition } from "@/components/PageTransition";
 import { GlowCard } from "@/components/ui/GlowCard";
+
+export const metadata: Metadata = {
+  title: "Chess Coaching Careers — Join TrueSkill Academy",
+  description:
+    "TrueSkill Academy is hiring chess coaches who make disciplined learning vivid, respectful, and personal. Strong fundamentals, tournament exposure, and teaching experience valued.",
+  alternates: {
+    canonical: "https://atrueskill.academy/careers",
+  },
+  openGraph: {
+    title: "Chess Coaching Careers | TrueSkill Academy",
+    description: "Coach the next generation of strategic thinkers. Apply to join TrueSkill Academy.",
+    url: "https://atrueskill.academy/careers",
+  },
+};
 
 const sections: [string, string[]][] = [
   ["Qualifications", ["Strong chess fundamentals and coaching experience", "Comfort teaching children and teens", "Tournament exposure preferred"]],
@@ -13,7 +29,8 @@ const sections: [string, string[]][] = [
 export default function CareersPage() {
   return (
     <PageTransition>
-      <section className="pt-32">
+      <Breadcrumb crumbs={[{ label: "Home", href: "/" }, { label: "Careers", href: "/careers" }]} />
+      <section className="pt-8">
         <div className="section-shell grid items-center gap-10 py-16 lg:grid-cols-[1fr_0.7fr]">
           <div>
             <p className="font-cinzel text-sm uppercase tracking-[0.18em] text-gold">Careers</p>
