@@ -18,6 +18,17 @@ export const metadata: Metadata = {
     description:
       "Expert chess coaching from beginner to advanced. Strategy, confidence, and competitive readiness taught with warmth.",
     url: "https://atrueskill.academy",
+    type: "website",
+    siteName: "TrueSkill Academy",
+    locale: "en_IN",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TrueSkill Academy — Think Deeply. Play Beautifully." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TrueSkill Academy | Chess Coaching for Ambitious Young Minds",
+    description:
+      "Expert chess coaching from beginner to advanced. Strategy, confidence, and competitive readiness taught with warmth.",
+    images: ["/og-image.png"],
   },
 };
 

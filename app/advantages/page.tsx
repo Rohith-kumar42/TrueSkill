@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     title: "Advantages of Chess | TrueSkill Academy",
     description: "How chess improves cognitive ability, emotional resilience, educational performance, and social skills.",
     url: "https://atrueskill.academy/advantages",
+    type: "website",
+    siteName: "TrueSkill Academy",
+    locale: "en_IN",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TrueSkill Academy — Think Deeply. Play Beautifully." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Advantages of Chess | TrueSkill Academy",
+    description: "How chess improves cognitive ability, emotional resilience, educational performance, and social skills.",
+    images: ["/og-image.png"],
   },
 };
 

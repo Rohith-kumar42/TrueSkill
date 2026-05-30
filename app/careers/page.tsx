@@ -16,6 +16,16 @@ export const metadata: Metadata = {
     title: "Chess Coaching Careers | TrueSkill Academy",
     description: "Coach the next generation of strategic thinkers. Apply to join TrueSkill Academy.",
     url: "https://atrueskill.academy/careers",
+    type: "website",
+    siteName: "TrueSkill Academy",
+    locale: "en_IN",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TrueSkill Academy — Think Deeply. Play Beautifully." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chess Coaching Careers | TrueSkill Academy",
+    description: "Coach the next generation of strategic thinkers. Apply to join TrueSkill Academy.",
+    images: ["/og-image.png"],
   },
 };
 

@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     title: "Beginner Chess Program | TrueSkill Academy",
     description: "Build a clean chess foundation — movement, safety, checkmate patterns, and chess manners. 2 sessions per week.",
     url: "https://atrueskill.academy/programs/beginner",
+    type: "website",
+    siteName: "TrueSkill Academy",
+    locale: "en_IN",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TrueSkill Academy — Think Deeply. Play Beautifully." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Beginner Chess Program | TrueSkill Academy",
+    description: "Build a clean chess foundation — movement, safety, checkmate patterns, and chess manners. 2 sessions per week.",
+    images: ["/og-image.png"],
   },
 };
 

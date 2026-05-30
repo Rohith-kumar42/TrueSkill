@@ -16,6 +16,16 @@ export const metadata: Metadata = {
     title: "Contact TrueSkill Academy",
     description: "Begin a conversation about the right chess path. Reach us by email, phone, or our contact form.",
     url: "https://atrueskill.academy/contact",
+    type: "website",
+    siteName: "TrueSkill Academy",
+    locale: "en_IN",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TrueSkill Academy — Think Deeply. Play Beautifully." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact TrueSkill Academy",
+    description: "Begin a conversation about the right chess path. Reach us by email, phone, or our contact form.",
+    images: ["/og-image.png"],
   },
 };
 

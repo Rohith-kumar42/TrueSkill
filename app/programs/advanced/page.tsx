@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     title: "Advanced Chess Program | TrueSkill Academy",
     description: "High-touch coaching for players seeking competitive edge — model game analysis, dynamic imbalance training, and tournament calendar planning.",
     url: "https://atrueskill.academy/programs/advanced",
+    type: "website",
+    siteName: "TrueSkill Academy",
+    locale: "en_IN",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TrueSkill Academy — Think Deeply. Play Beautifully." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Advanced Chess Program | TrueSkill Academy",
+    description: "High-touch coaching for players seeking competitive edge — model game analysis, dynamic imbalance training, and tournament calendar planning.",
+    images: ["/og-image.png"],
   },
 };
 
