@@ -6,9 +6,9 @@ import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export function IntroSection() {
   return (
-    <section className="py-24">
+    <section className="section-rhythm" aria-label="Who We Are">
       <motion.div className="section-shell grid items-center gap-12 lg:grid-cols-[1fr_0.8fr]" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
-        <div>
+        <div style={{ maxWidth: "65ch" }}>
           <motion.p variants={fadeUp} className="font-cinzel text-sm uppercase tracking-[0.18em] text-gold">
             Who We Are
           </motion.p>

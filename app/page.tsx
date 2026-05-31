@@ -5,6 +5,7 @@ import { BottomCta } from "@/components/sections/BottomCta";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { IntroSection } from "@/components/sections/IntroSection";
 import { VisionSection } from "@/components/sections/VisionSection";
+import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
 
 export const metadata: Metadata = {
   title: "TrueSkill Academy | Chess Coaching for Ambitious Young Minds",
@@ -40,6 +41,7 @@ export default function HomePage() {
       <ApproachSection />
       <VisionSection />
       <BottomCta />
+      <StickyMobileCta />
     </PageTransition>
   );
 }

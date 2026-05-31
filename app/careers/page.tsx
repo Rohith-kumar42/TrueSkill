@@ -59,7 +59,7 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
-      <section className="pb-24">
+      <section className="pb-36">
         <div className="section-shell grid gap-5 md:grid-cols-2">
           {sections.map(([title, items]) => (
             <GlowCard key={title} className={title === "Why Join Us" ? "border-gold/55 shadow-gold" : ""}>
@@ -75,10 +75,12 @@ export default function CareersPage() {
             </GlowCard>
           ))}
         </div>
-        <div className="section-shell mt-8">
-          <a href="mailto:careers@atrueskill.academy" className="inline-flex min-h-12 items-center gap-3 rounded bg-gold px-5 py-3 font-cinzel text-sm font-semibold uppercase tracking-[0.14em] text-[#120d08] shadow-gold">
-            <Mail className="h-4 w-4" /> Apply Now
-          </a>
+        <div className="mt-16">
+          <div className="section-shell">
+            <a href="mailto:careers@atrueskill.academy" className="btn-primary">
+              <Mail className="h-4 w-4" aria-hidden="true" /> Apply Now
+            </a>
+          </div>
         </div>
       </section>
     </PageTransition>

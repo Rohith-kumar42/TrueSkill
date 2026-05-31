@@ -4,7 +4,7 @@ import { navLinks, programs } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="border-t border-gold/15 bg-[#090909] py-12">
+    <footer className="border-t border-gold/15 bg-[#090909] py-12 pb-28 lg:pb-12" role="contentinfo">
       <div className="section-shell grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
@@ -36,8 +36,10 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="section-shell mt-10 border-t border-gold/10 pt-6 text-sm text-ivory/50">
-        © 2026 TrueSkill Academy. Think deeply. Play beautifully.
+      <div className="mt-10">
+        <div className="section-shell border-t border-gold/10 pt-6 text-sm text-ivory/50">
+          © 2026 TrueSkill Academy. Think deeply. Play beautifully.
+        </div>
       </div>
     </footer>
   );

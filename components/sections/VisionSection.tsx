@@ -9,7 +9,7 @@ export function VisionSection() {
   const x = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   return (
-    <section ref={ref} className="relative overflow-hidden py-28">
+    <section ref={ref} className="relative overflow-hidden section-rhythm" aria-label="Vision and Mission">
       <motion.div style={{ x }} className="absolute inset-x-[-10%] top-1/2 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
       <div className="section-shell text-center">
         <p className="font-cinzel text-sm uppercase tracking-[0.18em] text-gold">Vision & Mission</p>

@@ -2,7 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ──────────────────────────────────────────────────
+   Design Tokens
+   ────────────────────────────────────────────────── */
+
 :root {
+  /* — Spacing scale (4-step geometric) — */
+  --space-1: 0.25rem;   /*  4px — tight inline gaps */
+  --space-2: 0.5rem;    /*  8px — component internals */
+  --space-3: 1rem;      /* 16px — default element gap */
+  --space-4: 1.5rem;    /* 24px — section breathing room */
+  --space-5: 2.5rem;    /* 40px — section separation */
+  --space-6: 4rem;      /* 64px — major section breaks */
+  --space-7: 6rem;      /* 96px — hero-level whitespace */
+
+  /* — Fluid type scale (no breakpoint jumps) — */
+  --text-sm:   clamp(0.8125rem, 0.79rem + 0.12vw, 0.875rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.19vw, 1rem);
+  --text-lg:   clamp(1.0625rem, 0.99rem + 0.37vw, 1.125rem);
+  --text-xl:   clamp(1.1875rem, 1.06rem + 0.65vw, 1.375rem);
+  --text-2xl:  clamp(1.375rem, 1.14rem + 1.17vw, 1.75rem);
+  --text-3xl:  clamp(1.75rem, 1.33rem + 2.1vw, 2.5rem);
+  --text-4xl:  clamp(2.25rem, 1.6rem + 3.25vw, 3.5rem);
+
+  /* — Brand palette (existing hues preserved via oklch) — */
   --color-bg-deep: #0d0d0d;
   --color-bg-board: #1a1209;
   --color-light-square: #ead7b2;
@@ -14,25 +37,52 @@
   --color-success: #48bb78;
   --color-error: #fc8181;
   --color-highlight: rgba(212, 168, 67, 0.15);
+
+  /* — Semantic surface tokens — */
+  --color-ink:           oklch(92% 0.02 75);    /* ivory body text */
+  --color-ink-secondary: oklch(72% 0.015 75);   /* secondary text */
+  --color-ink-tertiary:  oklch(58% 0.01 75);    /* placeholders, hints */
+  --color-border:        oklch(30% 0.015 75);   /* dividers, card borders */
+  --color-surface:       oklch(12% 0.01 75);    /* card backgrounds */
+  --color-bg:            oklch(6% 0.005 75);    /* page background */
+
+  /* — Semantic status — */
+  --color-semantic-success: oklch(62% 0.16 155);
+  --color-semantic-warning: oklch(72% 0.16 75);
+  --color-semantic-error:   oklch(60% 0.2 25);
+
+  /* — Motion (Emil Kowalski easing curves) — */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 }
+
+
+/* ──────────────────────────────────────────────────
+   Base reset
+   ────────────────────────────────────────────────── */
 
 * {
   box-sizing: border-box;
 }
 
 html {
+  position: relative;
   scroll-behavior: smooth;
   background: var(--color-bg-deep);
 }
 
 body {
+  position: relative;
   margin: 0;
   min-height: 100vh;
   color: var(--color-ivory);
   background:
     radial-gradient(circle at 50% 0%, rgba(212, 168, 67, 0.11), transparent 34rem),
     linear-gradient(180deg, #0d0d0d 0%, #130f0b 44%, #0d0d0d 100%);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.65;
 }
 
 body::selection {
@@ -51,25 +101,69 @@ textarea {
   font: inherit;
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
+
+/* ──────────────────────────────────────────────────
+   Focus rings — brand-colored, always visible on keyboard
+   ────────────────────────────────────────────────── */
+
+:focus-visible {
   outline: 2px solid var(--color-gold);
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
-mark {
-  color: var(--color-ivory);
-  background: var(--color-highlight);
-  border-bottom: 1px solid rgba(212, 168, 67, 0.45);
-  padding: 0 0.18em;
+:focus:not(:focus-visible) {
+  outline: none;
 }
+
+
+/* ──────────────────────────────────────────────────
+   Skip navigation (accessibility)
+   ────────────────────────────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-3);
+  background: var(--color-gold);
+  color: #120d08;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 0 0 6px 6px;
+  font-weight: 600;
+  font-family: var(--font-cinzel), serif;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  z-index: 100;
+  transition: top 200ms var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+
+/* ──────────────────────────────────────────────────
+   Touch target minimum (44px)
+   ────────────────────────────────────────────────── */
+
+button, a, input[type="checkbox"], input[type="radio"] {
+  min-height: 44px;
+}
+
+
+/* ──────────────────────────────────────────────────
+   Layout shell
+   ────────────────────────────────────────────────── */
 
 .section-shell {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
 }
+
+
+/* ──────────────────────────────────────────────────
+   Glass surface
+   ────────────────────────────────────────────────── */
 
 .glass-surface {
   background: rgba(255, 255, 255, 0.04);
@@ -77,6 +171,11 @@ mark {
   box-shadow: 0 0 24px rgba(212, 168, 67, 0.08);
   backdrop-filter: blur(12px);
 }
+
+
+/* ──────────────────────────────────────────────────
+   Chess corner ornaments
+   ────────────────────────────────────────────────── */
 
 .chess-corners {
   position: relative;
@@ -105,9 +204,223 @@ mark {
   border-bottom: 1px solid rgba(212, 168, 67, 0.6);
 }
 
+
+/* ──────────────────────────────────────────────────
+   Text utilities
+   ────────────────────────────────────────────────── */
+
 .text-balance {
   text-wrap: balance;
 }
+
+mark {
+  color: var(--color-ivory);
+  background: var(--color-highlight);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.45);
+  padding: 0 0.18em;
+}
+
+
+/* ──────────────────────────────────────────────────
+   Button system — unified tokens, three roles
+   ────────────────────────────────────────────────── */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--color-gold);
+  color: #120d08;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  font-family: var(--font-cinzel), serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: none;
+  cursor: pointer;
+  min-height: 48px;
+  transition:
+    transform 120ms var(--ease-out),
+    background-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-gold-dim);
+  box-shadow: 0 2px 12px rgba(212, 168, 67, 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: var(--color-gold);
+  border: 1.5px solid rgba(212, 168, 67, 0.35);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: var(--text-sm);
+  font-family: var(--font-cinzel), serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  min-height: 48px;
+  transition:
+    transform 120ms var(--ease-out),
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(212, 168, 67, 0.1);
+  border-color: rgba(212, 168, 67, 0.55);
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-ink-secondary);
+  padding: var(--space-2) var(--space-3);
+  border: none;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  min-height: 44px;
+  transition: color 150ms ease;
+}
+
+.btn-ghost:hover {
+  color: var(--color-gold);
+}
+
+.btn-sm {
+  padding: 0.375rem 1.25rem !important;
+  min-height: 40px !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+
+
+/* ──────────────────────────────────────────────────
+   Sticky mobile CTA
+   ────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .cta-sticky-mobile {
+    position: fixed;
+    bottom: 86px; /* sits above the mobile bottom nav */
+    left: 0;
+    right: 0;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(13, 13, 13, 0.92);
+    border-top: 1px solid rgba(212, 168, 67, 0.18);
+    z-index: 49;
+    backdrop-filter: blur(12px);
+  }
+
+  .cta-sticky-mobile .btn-primary {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-base);
+  }
+}
+
+
+/* ──────────────────────────────────────────────────
+   Form field system
+   ────────────────────────────────────────────────── */
+
+.field-group {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.field-label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: var(--space-1);
+  font-size: var(--text-sm);
+}
+
+.field-hint {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-ink-tertiary);
+}
+
+.field-input {
+  border-radius: 6px;
+  border: 1px solid rgba(212, 168, 67, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-ivory);
+  font-size: var(--text-base);
+  transition: border-color 150ms ease;
+}
+
+.field-input:focus {
+  border-color: var(--color-gold);
+  outline: none;
+}
+
+.field-input::placeholder {
+  color: var(--color-ink-tertiary);
+}
+
+
+/* ──────────────────────────────────────────────────
+   Section rhythm
+   ────────────────────────────────────────────────── */
+
+.section-rhythm:nth-child(odd) {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+.section-rhythm:nth-child(even) {
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
+}
+
+
+/* ──────────────────────────────────────────────────
+   Gate hover on pointer devices only
+   ────────────────────────────────────────────────── */
+
+@media (hover: none) {
+  .btn-primary:hover {
+    background: var(--color-gold);
+    box-shadow: none;
+  }
+
+  .btn-secondary:hover {
+    background: transparent;
+    border-color: rgba(212, 168, 67, 0.35);
+  }
+}
+
+
+/* ──────────────────────────────────────────────────
+   Reduced motion — respect user preferences
+   ────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   *,

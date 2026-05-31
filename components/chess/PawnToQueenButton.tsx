@@ -16,11 +16,7 @@ export function PawnToQueenButton({ href, children, className }: PawnToQueenButt
   return (
     <Link
       href={href}
-      className={cn(
-        "group inline-flex min-h-12 items-center gap-3 rounded px-5 py-3 font-cinzel text-sm font-semibold uppercase tracking-[0.14em] text-[#120d08] shadow-gold transition duration-200 hover:bg-gold-dim",
-        "bg-gold",
-        className
-      )}
+      className={cn("btn-primary group", className)}
     >
       <span className="relative h-7 w-7 overflow-hidden" aria-hidden="true">
         <motion.span className="absolute inset-0 block group-hover:-translate-y-8 transition-transform duration-200">

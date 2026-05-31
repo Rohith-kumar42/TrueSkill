@@ -10,7 +10,7 @@ export function ApproachSection() {
   const current = approach[active];
 
   return (
-    <section id="approach" className="bg-[#0a0a0a]/75 py-24">
+    <section id="approach" className="section-rhythm bg-[#0a0a0a]/75" aria-label="Our Approach">
       <div className="section-shell">
         <p className="font-cinzel text-sm uppercase tracking-[0.18em] text-gold">Our Approach</p>
         <h2 className="mt-4 max-w-3xl font-display text-[clamp(2.4rem,6vw,4.8rem)] font-bold leading-tight">
@@ -22,7 +22,7 @@ export function ApproachSection() {
               type="button"
               key={step.title}
               onClick={() => setActive(index)}
-              className={`grid min-h-32 place-items-center rounded border p-4 transition ${active === index ? "border-gold bg-gold/10 shadow-gold" : "border-gold/15 bg-white/[0.03] hover:border-gold/45"}`}
+              className={`grid min-h-32 place-items-center rounded border p-4 transition active:scale-[0.97] ${active === index ? "border-gold bg-gold/10 shadow-gold" : "border-gold/15 bg-white/[0.03] hover:border-gold/45"}`}
             >
               <ChessPiece piece={step.piece} className={`h-12 w-12 ${active === index ? "text-gold" : "text-ivory/55"}`} />
               <span className="mt-3 font-cinzel text-xs uppercase tracking-[0.12em]">{step.title}</span>

@@ -9,7 +9,7 @@ const words = ["Think", "Deeply.", "Play", "Beautifully."];
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-24">
+    <section className="relative flex min-h-screen items-center overflow-hidden pt-24 pb-28 lg:pb-0" aria-label="Hero">
       <div className="absolute inset-0 opacity-45">
         <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(88vw,760px)] -translate-x-1/2 -translate-y-1/2 rotate-45 grid-cols-8 overflow-hidden rounded-lg border border-gold/20 shadow-gold-lg">
           {Array.from({ length: 64 }).map((_, index) => (
@@ -32,19 +32,19 @@ export function HeroSection() {
                 className="inline-block"
                 initial={{ opacity: 0, y: 80 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.12, duration: 0.6, ease: "easeOut" }}
+                transition={{ delay: index * 0.12, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
               >
                 {word}
               </motion.span>
             </span>
           ))}
         </h1>
-        <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-ivory/75">
+        <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-ivory/75" style={{ maxWidth: "65ch" }}>
           TrueSkill Academy turns chess into a disciplined, expressive practice: strategy, confidence, and competitive readiness taught with warmth.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <PawnToQueenButton href="/programs">Explore Programs</PawnToQueenButton>
-          <a href="#approach" className="inline-flex min-h-12 items-center rounded border border-gold/35 px-5 py-3 font-cinzel text-sm uppercase tracking-[0.14em] text-gold hover:bg-gold/10">
+          <PawnToQueenButton href="/programs">See how it works</PawnToQueenButton>
+          <a href="#approach" className="btn-secondary">
             Our Approach
           </a>
         </div>

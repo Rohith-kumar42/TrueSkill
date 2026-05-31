@@ -29,7 +29,7 @@ export function LevelPageLayout({ program }: { program: Program }) {
           { label: program.name, href: `/programs/${program.slug}` },
         ]}
       />
-      <section className="pt-8">
+      <section className="pt-8" aria-label={`${program.name} program overview`}>
         <div className="section-shell grid min-h-[54vh] items-center gap-10 py-16 lg:grid-cols-[1fr_0.7fr]">
           <div>
             <Link href="/programs" className="font-cinzel text-sm uppercase tracking-[0.18em] text-gold">
@@ -48,15 +48,15 @@ export function LevelPageLayout({ program }: { program: Program }) {
         <div className="section-shell grid gap-6 lg:grid-cols-[1fr_1fr_0.8fr]">
           <InfoBlock title="Key Objectives" items={program.objectives} />
           <InfoBlock title="Curriculum Highlights" items={program.curriculum} />
-          <aside className="glass-surface rounded-lg p-6">
+          <aside className="glass-surface rounded-lg p-6 pb-5">
             <CalendarDays className="h-6 w-6 text-gold" aria-hidden="true" />
             <h2 className="mt-5 font-display text-3xl font-bold">Schedule & Pricing</h2>
             <p className="mt-4 text-ivory/70">{program.schedule}</p>
             <p className="mt-6 font-cinzel text-2xl text-gold">{program.price}</p>
-            <div className="mt-7">
-              <PawnToQueenButton href="/contact" className="w-full justify-center">
-                Enroll
-              </PawnToQueenButton>
+            <div className="mt-4">
+              <Link href="/contact" className="flex w-full justify-center rounded bg-gold px-4 pt-1.5 pb-1 font-cinzel text-sm font-semibold text-[#120d08] shadow-gold">
+                Enroll Now
+              </Link>
             </div>
           </aside>
         </div>
@@ -66,7 +66,7 @@ export function LevelPageLayout({ program }: { program: Program }) {
       </section>
 
       {faqs.length > 0 && (
-        <section className="pb-24">
+        <section className="pb-24" aria-label="Frequently Asked Questions">
           <div className="section-shell">
             <h2 className="font-display text-3xl font-bold">Frequently Asked Questions</h2>
             <div className="mt-6 grid gap-4">

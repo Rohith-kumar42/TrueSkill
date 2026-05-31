@@ -36,11 +36,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${cinzel.variable} ${decorative.variable}`} data-scroll-behavior="smooth">
       <body>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <LocalBusinessSchema />
         <OrganizationSchema />
         <ChessboardBg />
         <Navbar />
-        {children}
+        <div id="main-content">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
