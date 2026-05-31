@@ -53,7 +53,7 @@ export function Navbar() {
                 />
               </Link>
             ))}
-            <Link href="/contact" className="inline-flex items-center justify-center rounded border border-gold/50 px-3.5 py-1 font-cinzel text-sm font-semibold text-gold hover:bg-gold/10 hover:border-gold transition-colors">
+            <Link href="/contact" className="inline-flex items-center justify-center rounded bg-gold px-3.5 py-1 font-cinzel text-sm font-semibold text-[#120d08] shadow-gold hover:bg-gold-dim transition-colors">
               Enroll Now
             </Link>
           </div>
